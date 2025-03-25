@@ -1,0 +1,103 @@
+
+.menu{
+    align-items: left;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    background-color: #121212;
+}
+.logo {
+    margin-left: 80px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(236, 80, 33);
+}
+input {
+    padding: 8px;
+    width: 300px;
+}
+.featured {
+    position: relative;
+    text-align: center;
+}
+.featured-content img {
+    width: 100%;
+    height: auto;
+}
+.overlay {
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+#category-list{
+  display: flex;
+  gap: 100px;
+}
+#category-list a {
+    text-align: center;
+
+}
+.overlay{
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+    padding-bottom: 20px; /* Adds some spacing from the bottom */
+}
+.image-gallery {
+
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.image-gallery img {
+    padding: 8px;
+    width: 150px;  /* Adjust to your desired width */
+    height: 300px; /* Adjust to your desired height */
+    object-fit: cover; /* Ensures the image fills the box without distortion */
+    border-radius: 12px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1); /* Enlarges the image slightly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow effect */
+}
+body {
+    background-image:url("movie/eb7f0c62-c15c-4928-875a-6abb549dfa39.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header input{
+    width: 40%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+head button{
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+}
