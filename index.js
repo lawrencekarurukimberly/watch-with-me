@@ -2,12 +2,10 @@ const API_KEY = "5743c14b8563d4bb5435a0725725c5e9";
 const BASE_URL = "https://api.themoviedb.org/3";
 let currentMovie = {};
 
-// Redirect to login if no user is logged in
 if (!localStorage.getItem("loggedInUser")) {
     window.location.href = "login.html";
 }
 
-// Function to fetch and display movie details
 async function fetchMovieDetails(movieId) {
     const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`;
 
@@ -20,12 +18,10 @@ async function fetchMovieDetails(movieId) {
             return;
         }
 
-        // Update movie details on the page
         document.getElementById("movie-title").innerText = movie.title;
         document.getElementById("movie-poster").src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
         document.getElementById("movie-overview").innerText = movie.overview;
 
-        // Save current movie details
         currentMovie = {
             id: movie.id,
             title: movie.title,
@@ -38,12 +34,10 @@ async function fetchMovieDetails(movieId) {
     }
 }
 
-// Function to save movie to My Space
 function saveMovieToMySpace() {
     if (Object.keys(currentMovie).length > 0) {
         let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
-        // Avoid duplicates
         if (!savedMovies.some(movie => movie.id === currentMovie.id)) {
             savedMovies.push(currentMovie);
             localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
