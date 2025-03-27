@@ -15,6 +15,11 @@ async function fetchMovieDetails(movieId) {
         const response = await fetch(url);
         const movie = await response.json();
 
+        if (!movie || movie.success === false) {
+            console.error("Movie not found!");
+            return;
+        }
+
         // Update movie details on the page
         document.getElementById("movie-title").innerText = movie.title;
         document.getElementById("movie-poster").src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
@@ -22,31 +27,58 @@ async function fetchMovieDetails(movieId) {
 
         // Save current movie details
         currentMovie = {
+            id: movie.id,
             title: movie.title,
             poster: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,
             overview: movie.overview
         };
+
     } catch (error) {
         console.error("Error fetching movie details:", error);
     }
 }
 
-// Attach event listeners to images
-document.addEventListener("DOMContentLoaded", () => {
+// Function to save movie to My Space
+function saveMovieToMySpace() {
+    if (Object.keys(currentMovie).length > 0) {
+        let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
+
+        // Avoid duplicates
+        if (!savedMovies.some(movie => movie.id === currentMovie.id)) {
+            savedMovies.push(currentMovie);
+            localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+            alert("Movie saved to My Space!");
+        } else {
+            alert("This movie is already in My Space.");
+        }
+    } else {
+        alert("No movie selected!");
+    }
+}
+
+// Function to handle image click events
+function attachImageClickEvents() {
     document.querySelectorAll(".image-gallery img").forEach(img => {
         img.addEventListener("click", () => {
             const movieId = img.getAttribute("data-movie-id"); // Get movie ID
-            fetchMovieDetails(movieId);
+            if (movieId) {
+                fetchMovieDetails(movieId);
+            } else {
+                console.error("No movie ID found for this image.");
+            }
         });
     });
+}
 
-    // Save movie to My Space Page
-    document.getElementById("save-button").addEventListener("click", () => {
-        if (Object.keys(currentMovie).length > 0) {
-            let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
-            savedMovies.push(currentMovie);
-            localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
-            alert("Movie saved to My Space Page!");
-        }
-    });
+// Ensure DOM is fully loaded before adding event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    attachImageClickEvents();
+
+    // Ensure the save button exists before adding event listener
+    const saveButton = document.getElementById("save-button");
+    if (saveButton) {
+        saveButton.addEventListener("click", saveMovieToMySpace);
+    } else {
+        console.error("Save button not found!");
+    }
 });
