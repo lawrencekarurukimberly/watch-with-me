@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(movie/48896cd0-10f5-4ac9-88e4-8eef0006a840.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 400px;
+    background: ;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-container {
+    padding: 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #141212;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color:solid black;
+    font-size: 14px;
+}
+
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+l.toggle-btn button.active {
+    color: #1758ad;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #0a0a0a;
+
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.forgot-password a {
+    color: #1c1eaf;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    color: #ff3333;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #e60000;
+}

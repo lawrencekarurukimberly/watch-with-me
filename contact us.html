@@ -3,12 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
     <link rel="html" href="index.html">
-</head>
-<body>
-    <a href="index.html">HOME</a></div>
+    <link rel="stylesheet" href="index.html">
+    <style>
+        input{
+            background-color: transparent;
+            border-color:black ;
+        }
+        #headers{
+            background-color: #ffffff;
+            display: flex;
+            text-align: center;
+            margin-top: 0%;
+        }
+        header{
+           margin-top: 0%;
 
+        }
+        body {
+
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .contact-form {
+            background-repeat:no-repeat ;
+            background-size: cover;
+            background-position: center;
+
+            background-image: url(animation/e01a66f9-3db2-44b4-83fd-ad72525b83d4.jpeg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+           box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .contact-info {
+            margin-top: 30px;
+            color: #03070c;
+        }
+        .contact-info a{
+            cursor: pointer;
+            color: #3498db;
+        }
+        .contact-info h2 {
+            color: #03070c;
+            border-bottom: 2px solid #eb6213;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <a  id="headers" href="index.html">HOME</a></div>
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <div class="contact-form">
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Other Ways to Reach Us</h2>
+            <p><strong>Email:</strong> <a>spiceeast509</a></a>
+            <p><strong>Phone:</strong> <a>0716450781</a></p>
+            <p><strong>Address:</strong> <a>Nairobi</a></p>
+        </div>
+    </div>
 
 </body>
 </html>

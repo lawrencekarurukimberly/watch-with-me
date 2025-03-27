@@ -1,52 +1,52 @@
-const apiKey = "YOUR_TMDB_API_KEY"; // Replace with your actual TMDB API Key
-const movies = [
-    "Free Guy",
-    "Jumanji Next Level",
-    "IT Chapter 2",
-    "Encanto",
-    "Frozen 2",
-    "The Best Movie Ever",
-    "Transformers",
-    "Spider-Man No Way Home",
-    "The Batman",
-    "Doctor Strange in the Multiverse of Madness"
-];
+const API_KEY = "5743c14b8563d4bb5435a0725725c5e9";
+const BASE_URL = "https://api.themoviedb.org/3";
+let currentMovie = {};
 
-async function fetchMovieData(title) {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(title)}`;
+// Redirect to login if no user is logged in
+if (!localStorage.getItem("loggedInUser")) {
+    window.location.href = "login.html";
+}
+
+// Function to fetch and display movie details
+async function fetchMovieDetails(movieId) {
+    const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`;
+
     try {
         const response = await fetch(url);
-        const data = await response.json();
-        if (data.results.length > 0) {
-            return data.results[0]; // Return the first search result
-        } else {
-            return null; // Movie not found
-        }
+        const movie = await response.json();
+
+        // Update movie details on the page
+        document.getElementById("movie-title").innerText = movie.title;
+        document.getElementById("movie-poster").src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
+        document.getElementById("movie-overview").innerText = movie.overview;
+
+        // Save current movie details
+        currentMovie = {
+            title: movie.title,
+            poster: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,
+            overview: movie.overview
+        };
     } catch (error) {
-        console.error("Error fetching movie data:", error);
-        return null;
+        console.error("Error fetching movie details:", error);
     }
 }
 
-async function displayMovies() {
-    const gallery = document.getElementById("movie-gallery");
+// Attach event listeners to images
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".image-gallery img").forEach(img => {
+        img.addEventListener("click", () => {
+            const movieId = img.getAttribute("data-movie-id"); // Get movie ID
+            fetchMovieDetails(movieId);
+        });
+    });
 
-    for (const movieTitle of movies) {
-        const movie = await fetchMovieData(movieTitle);
-
-        if (movie) {
-            const movieCard = document.createElement("div");
-            movieCard.classList.add("movie-card");
-
-            movieCard.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-                <div class="movie-title">${movie.title}</div>
-                <div class="movie-desc">${movie.overview}</div>
-            `;
-
-            gallery.appendChild(movieCard);
+    // Save movie to My Space Page
+    document.getElementById("save-button").addEventListener("click", () => {
+        if (Object.keys(currentMovie).length > 0) {
+            let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
+            savedMovies.push(currentMovie);
+            localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+            alert("Movie saved to My Space Page!");
         }
-    }
-}
-
-displayMovies();
+    });
+});

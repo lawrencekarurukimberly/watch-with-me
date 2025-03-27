@@ -8,24 +8,27 @@
     <link rel="icon" href="AppIcons">
     <link rel="manifest" href="manifest.json">
     <link rel="html" href="animation.html">
-    <link rel="html" href="horror.html">
+    <link rel="html" href="My space.html">
     <link rel="htm" href="contact us.html">
+    <link rel="html" href="login.html">
 </head>
 <body>
     <header>
         <div class="logo">WWM</div>
         <input  type="text" placeholder="Search MOVIE">
-        <button type="search">search</button>
+        <input type="text" id="image" name="image" placeholder="image URL" required>
+        <button id="search-button" type="search">search</button>
     </header>
 
     <main>
+
         <section class="featured">
             <div class="featured-content">
                 <div class="overlay">
                     <h1>What to read-wwm</h1>
                      <div id="category-list">
                        <a href="animation.html">ANIMATION</a>
-                       <a href="horror.html">HORROR</a>
+                       <a href="My space.html">MY-SPACE</a>
                        <a href="contact us.html">CONTACT US</a>
                      </div>
                 </div>
@@ -33,39 +36,75 @@
         </section>
         <section>
             <div class="image-gallery">
-                <img src="movie/¡Come on, vámonos! 🐒 Check out the new poster for….jpeg" alt="Image 1">
-                <img src="movie/31 Wicked Christmas Movies You Won't Find On Hallmark Channel.jpeg" alt="Image 2">
-                <img src="movie/a21be3a8-6f7f-4661-9e1d-70756a796848.jpeg" alt="Image 3">
-                <img src="movie/Free Guy ⋆ Life With Heidi.jpeg" alt="Image 4">
-                <img src="movie/The Boys Season 2.jpeg" alt="Image 5">
-                <img src="movie/Jumanji Next Level.jpeg" alt="Image 6">
-                <img src="movie/Marvel Movie Inspirational Quotes.jpeg" alt="Image 7">
-                <img src="movie/Zoológico le corta las garras a una leona solo para que los niños jueguen con ella.jpeg" alt="Image 8">
-                <img src="movie/Trends International Netflix Squid Game - Key Art Wall Poster, 22_375_ x 34_, Unframed Version.jpeg" alt="Image 9">
-                <img src="movie/The Hunger Games.jpeg" alt="Image 10">
-                <img src="movie/Cinco tramas que no incluyeron en Game of Thrones y que son cruciales en los libros.jpeg" alt="Image 11">
-                <img src="movie/Marvel Movie Inspirational Quotes.jpeg" alt="Image 12">
-                <img src="movie/Fistful of Vengeance (2022).jpeg" alt="Image 13">
-                <img src="movie/ca653064-f639-4a76-8b64-d0605cf2691e.jpeg" alt="Image 14">
-                <img src="animation/deb2c08d-65a3-4f48-924b-c654d829f83d.jpeg" alt="Image 15">
-                <img src="animation/The Croods   www_facebook.com_mookeapp" alt="Image 16">
-                <img src="animation/Encanto.jpeg" alt="Image 17">
-                <img src="animation/Spies in Disguise Parent Review.jpeg" alt="Image 18">
-                <img src="animation/Turning Red_ La película de Disney y Pixar que rompe los tabús de la menstruación.jpeg" alt="Image 19">
-                <img src="animation/Frozen 2 Printable Activity Kit!.jpeg" alt=" image 20">
-                <img src="movie/Fistful of Vengeance (2022).jpeg" alt="Image 21">
-                <img src="animation/The Croods   www_facebook.com_mookeapp" alt="Image 22">
-                <img src="animation/watch Lilo and Stitch.jpeg" alt="Image 23">
-                <img src="movie/Toy Story 2 and Other Pixar's Movies Ranked for the Ultimate Movie Marathon.jpeg" alt="Image 24">
-                <img src="movie/The Best Movies Of The Past Decade You Should Watch Now.jpeg"alt="image 25">
-                <img src="animation/Ben 10 - Group Wall Poster.jpeg"alt="image 26">
-                <img src="animation/Poster Cartaz Divertida Mente 2 B.jpeg"alt="image 27">
-                <img src="animation/🍿_ Hollywood 📽️_ The Wild Robot 🤖 A new poster….jpeg"alt="image 28">
-                <img src="movie/Cinco tramas que no incluyeron en Game of Thrones y que son cruciales en los libros.jpeg"alt="image 29">
-             </div>
-         </section>
+                <img src="movie/¡Come on, vámonos! 🐒 Check out the new poster for….jpeg" alt="dora" id="movie-1" data-movie-id="499701">
+                <img src="movie/31 Wicked Christmas Movies You Won't Find On Hallmark Channel.jpeg" alt="home alone"  id="movie-2" data-movie-id="222">
+                <img src="movie/a21be3a8-6f7f-4661-9e1d-70756a796848.jpeg" alt="star wars" id="movie-3" data-movie-id="181808">
+                <img src="movie/Free Guy ⋆ Life With Heidi.jpeg" alt="free Guy" id="movie-4" data-movie-id="550988">
+                <img src="movie/The Boys Season 2.jpeg" alt="the Boys" id="movie-5" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/Jumanji Next Level.jpeg" alt="Jumanji" id="movie-6" datamovie-id="353486">
+                <img src="movie/Marvel Movie Inspirational Quotes.jpeg" alt="end game" id="movie-7" data-movie-id="299534">
+                <img src="movie/Zoológico le corta las garras a una leona solo para que los niños jueguen con ella.jpeg" alt="avenger 1"id="movie-8" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/Trends International Netflix Squid Game - Key Art Wall Poster, 22_375_ x 34_, Unframed Version.jpeg" alt="squide game" id="movie-9" data-movie-id="1214667">
+                <img src="movie/The Hunger Games.jpeg" alt="the under games" id="movie-1"  id="movie-10" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/Cinco tramas que no incluyeron en Game of Thrones y que son cruciales en los libros.jpeg" alt="game of thrones" id="movie-11" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/Marvel Movie Inspirational Quotes.jpeg" alt="end game" id="movie-12" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/Fistful of Vengeance (2022).jpeg" alt="it-sfu of vengeance" id="movie-14" data-movie-id="w94_and_h141_bestv2">
+                <img src="movie/ca653064-f639-4a76-8b64-d0605cf2691e.jpeg" alt="spider man" id="movie-15" data-movie-id="w94_and_h141_bestv2">
+                <img src="animation/deb2c08d-65a3-4f48-924b-c654d829f83d.jpeg" alt="inside out" id="movie-16" data-movie-id="150540">
+                <img src="movie/First Look! _Man Of Steel_ Teaser Poster.jpeg" alt="Croods" id="movie-17" data-movie-id="150540">
+                <img src="animation/Encanto.jpeg" alt="Encanto" id="movie-18" data-movie-id="">
+                <img src="animation/Spies in Disguise Parent Review.jpeg" alt="Spies in Disguise" id="movie-19" data-movie-id="889">
+                <img src="animation/Turning Red_ La película de Disney y Pixar que rompe los tabús de la menstruación.jpeg" alt="Red" id="movie-20" data-movie-id="990">
+                <img src="animation/Frozen 2 Printable Activity Kit!.jpeg" alt=" Frozen_" id="movie-21" data-movie-id="009">
+                <img src="movie/Fistful of Vengeance (2022).jpeg" alt="itsful of vengeance" id="movie-22" data-movie-id="998">
+                <img src="movie/TRANSFORMERS_ RISE OF THE BEASTS At-Home Watch Party - Fab Everyday.jpeg" alt="Croods" id="movie-23" data-movie-id="887">
+                <img src="animation/watch Lilo and Stitch.jpeg" alt="Lilo" id="movie-24" data-movie-id="776">
+                <img src="movie/Toy Story 2 and Other Pixar's Movies Ranked for the Ultimate Movie Marathon.jpeg" alt="walle" id="movie-25" data-movie-id="665">
+                <img src="movie/The Best Movies Of The Past Decade You Should Watch Now.jpeg"alt="guardians if the galaxy" id="movie-26" data-movie-id="554">
+                <img src="animation/Ben 10 - Group Wall Poster.jpeg"alt="Ben 10" id="movie-27" data-movie-id="443">
+                <img src="animation/Poster Cartaz Divertida Mente 2 B.jpeg"alt="inside out 2" id="movie-28" data-movie-id="332">
+                <img src="animation/🍿_ Hollywood 📽️_ The Wild Robot 🤖 A new poster….jpeg"alt="Wild robot" id="movie-28" data-movie-id="221">
+                <img src="movie/Cinco tramas que no incluyeron en Game of Thrones y que son cruciales en los libros.jpeg"alt="Game of throne" id="movie-29" data-movie-id="123">
+                <img src="animation/Onward - Ian, Barley,  Laurel Lightfoot and the Manticore.jpeg"alt="" id="movie-32" data-movie-id="145">
+                <img src="animation/Ratatouille 2007.jpeg"alt="" id="movie-33" data-movie-id="156">
+                <img src="animation/Oliver North (oliver_nitfia) - Profile _ Pinterest.jpeg"alt="" id="movie-34" data-movie-id="167">
+                <img src="animation/e01a66f9-3db2-44b4-83fd-ad72525b83d4.jpeg"alt="" id="movie-35" data-movie-id="">
+                <img src="animation/PAW Patrol_ The Movie Trailer! See Adorable Pups, Voiced by Kim Kardashian and More, in Action.jpeg"alt="" id="movie-36" data-movie-id="347">
+                <img src="animation/The 20 Best Disney Movies of All Time.jpeg"alt="" id="movie-37" data-movie-id="657">
+                <img src="animation/107a0d2a-3862-4f5f-9fb3-1e30833edabf.jpeg"alt="" id="movie-38" data-movie-id="120">
+                <img src="animation/0b172efc-27a6-4be1-9da6-2e088eba776d.jpeg"alt="" id="movie-39" data-movie-id="972">
+                <img src="animation/53f11e4e-3d2f-43ed-a933-d0c0fbd37275.jpeg"alt="" id="movie-40" data-movie-id="675">
+                <img src="animation/10 Movies to Watch to Prepare for Halloween - Inspired By This.jpeg"alt="" id="movie-41" data-movie-id="0074">
+                <img src="animation/53f11e4e-3d2f-43ed-a933-d0c0fbd37275.jpeg"alt="" id="movie-42" data-movie-id="7231">
+                <img src="animation/100.jpeg"alt="" id="movie-43" data-movie-id="">
+                <img src="animation/1997 Walt Disneys Hercules Movie Poster Print Zues Hades Philoctetes ⚡🍿  _ eBay.jpeg"alt="" id="movie-44" data-movie-id="446">
+                <img src="animation/Aladdin ( 11_ x 17_ ) Movie Collector's Poster Print (T1)    _ eBay.jpeg"alt="" id="movie-45" data-movie-id="242">
+                <img src="animation/c429da01-6e0e-4729-a167-825f901adad7.jpeg"alt="" id="movie-46" data-movie-id="2324">
+                <img src="movie/Adventure Movie Poster Template.jpeg"alt="" id="movie-47" data-movie-id="">
+                <img src="movie/9d8a8f40-5867-4764-97a8-6eb502381e4e.jpeg"alt="" id="movie-48" data-movie-id="">
+                <img src="movie/Pete's Dragon (2016) (Theatrical Version).jpeg"alt="" id="movie-49" data-movie-id="">
+                <img src="movie/Ver-HD™ The Little Mermaid Pelicula_Completa DVD [MEGA] [LATINO] 2018 en Latino — Steemit.jpeg"alt="" id="movie-50" data-movie-id="">
+                <img src="movie/Thor.jpeg"alt="" id="movie-51" data-movie-id="">
+                <img src="movie/THE GREATEST SHOWMAN POSTER A4 A3 A2 A1 CINEMA MOVIE LARGE FORMAT  _ eBay.jpeg"alt="" id="movie-52" data-movie-id="">
+                <img src="movie/Monkey Man Poster.jpeg"alt="" id="movie-53" data-movie-id="">
+                <img src="movie/Deadpool in Action Poster - Quirky Antihero Movie Pose - Funny Wall Art Decor.jpeg"alt="" id="movie-54" data-movie-id="">
+                <img src="movie/e0301b72-7198-4139-8128-90495788edab.jpeg"alt="" id="movie-55" data-movie-id="">
+                <img src="movie/DUNE MOVIE POSTER 1 Sided ORIGINAL Mini Sheet 11_5 x 17 TIMOTHEE CHALAMET ZENDAYA.jpeg"alt="" id="movie-56" data-movie-id="">
+                <img src="movie/Dune Part Two Movie Poster.jpeg"alt="" id="movie-57" data-movie-id="">
+                <img src="movie/3159f184-80d8-499c-9bff-4309108935e3.jpeg"alt="" id="movie-58" data-movie-id="">
+                <img src="movie/0cfe7505-073c-45d5-a900-f7a7928b224a.jpeg"alt="" id="movie-59" data-movie-id="">
+                <img src="movie/48896cd0-10f5-4ac9-88e4-8eef0006a840.jpeg"alt="" id="movie-60" data-movie-id="">
+            </div>
         </section>
     </main>
+    <div id="movie-details">
+        <h2 id="movie-title">Movie details</h2>
+        <img id="movie-poster" src="" alt="Movie Poster">
+        <p id="movie-overview"></p>
+        <button id="save-button">
+            Save to my-SPACE
+        </button>
+    </div>
 </body>
 </html>
 
