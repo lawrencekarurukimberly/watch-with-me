@@ -17,10 +17,19 @@ Register or log in.
 
 Browse movies and click on any to view details.
 
-Save your favorite mov
+Save your favorite movies to "My Space."
+
+Technologies Used
+
 HTML, CSS, JavaScript
+
 Node.js
+
 TMDB API
+
 Vercel for deployment
+
 Developer
+
 Created by Lawrence.
+https://watchwith-me.blogspot.com/
